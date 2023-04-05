@@ -94,4 +94,14 @@
         align-items: center;
         justify-content: center;
     }
+
+    .deleteBtn button{
+        width: 40px;
+        height: 40px;
+        padding: 0;
+    }
+
+    .deleteBtn button img{
+        width: 20px;
+    }
 }

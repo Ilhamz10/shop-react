@@ -99,4 +99,7 @@
     .first{
         grid-column: 1/3;
     }
+    .cont h2{
+        font-size: 17px;
+    }
 }

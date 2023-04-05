@@ -8,9 +8,16 @@ import { IProduct } from '../../types/product';
 import { filterTypes } from '../ProductFilter/ProductFilter';
 import ChangeCont from './changeCont/ChangeCont';
 import AddCont from './addCont/AddCont';
+import { fetchProducts } from '../../store/action-creator/product';
+import { useDispatch } from 'react-redux';
 
 const Admin = () => {
     const { products } = useTypeSelector(state => state.product)
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch(fetchProducts() as any)
+    }, [])
 
     return (
         <div className='container'>
