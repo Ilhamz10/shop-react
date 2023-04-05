@@ -6,6 +6,8 @@ import cl from './BasketProduct.module.css'
 import { useDispatch } from 'react-redux';
 import { BasketActionType } from '../../../types/basket';
 
+import deleteIcon from '../../../icons/delete-icon.png'
+
 interface IProps {
     product: IProduct;
 }
@@ -43,7 +45,7 @@ const BasketProduct: FC<IProps> = ({ product }) => {
     return (
         <div className={cl.basketProduct}>
             <div className={cl.img}>
-                <img src={product.url} alt="" />
+                <img src={process.env.PUBLIC_URL + product.url} alt="" />
             </div>
             <div className={cl.info}>
                 <p className={cl.size}>{product.size} {product.sizeType}</p>
@@ -61,7 +63,7 @@ const BasketProduct: FC<IProps> = ({ product }) => {
                 </h1>
                 <div className={cl.deleteBtn}>
                     <Button onClick={() => deleteProduct(product)}>
-                        <img style={{ width: 23 }} src="/icons/delete-icon.png" alt="" />
+                        <img style={{ width: 23 }} src={deleteIcon} alt="" />
                     </Button>
                 </div>
             </div>

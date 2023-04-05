@@ -7,6 +7,10 @@ import { IProduct, ProductActionTypes } from '../../types/product';
 import { BasketActionType } from '../../types/basket';
 import SlideBtn from '../../UI/SlideBtn/SlideBtn';
 
+import whiteBasketIcon from '../../icons/white-basket-icon.png'
+import shareIcon from '../../icons/icon-share.png'
+import downloadIcon from '../../icons/icon-download.png'
+
 const ProductPage = () => {
     const [localCount, setLocalCount] = useState(1)
     const { basket } = useTypeSelector(state => state.basket)
@@ -36,7 +40,7 @@ const ProductPage = () => {
         <div className='container'>
             <main className={cl.main}>
                 <div className={cl.productImg}>
-                    <img src={currentProduct.url} alt="" />
+                    <img src={process.env.PUBLIC_URL + currentProduct.url} alt="" />
                 </div>
                 <div className={cl.info}>
                     <p className={cl.inStock}>В наличии</p>
@@ -53,23 +57,23 @@ const ProductPage = () => {
                             </div>
                             <Button onClick={() => addToBasket()} >
                                 В корзину
-                                <img src="/icons/white-basket-icon.png" alt="" />
+                                <img src={whiteBasketIcon} alt="" />
                             </Button>
                         </div>
 
                         <div className={cl.basketBtn}>
                             <Button onClick={() => addToBasket()} >
                                 В корзину
-                                <img src="/icons/white-basket-icon.png" alt="" />
+                                <img src={whiteBasketIcon} alt="" />
                             </Button>
                         </div>
                         <button className={cl.shareBtn}>
-                            <img src="/icons/icon-share.png" alt="" />
+                            <img src={shareIcon} alt="" />
                         </button>
                         <div className={cl.promotion}>При покупке от <span>10 000 ₸</span> бесплатная доставка по Кокчетаву и области</div>
                         <button className={cl.priceListBtn}>
                             Прайс-лист
-                            <img src="/icons/icon-download.png" alt="" />
+                            <img src={downloadIcon} alt="" />
                         </button>
                     </div>
 

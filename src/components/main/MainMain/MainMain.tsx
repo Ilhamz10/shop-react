@@ -28,8 +28,14 @@ const MainMain: FC = () => {
 
     useEffect(() => {
         dispatch(fetchProducts() as any)
-        dispatch({ type: ProductActionTypes.CHANGE_PRODUCTS, payload: JSON.parse(localStorage.getItem('products') as any) })
+        
+        // if(JSON.parse(localStorage.getItem('products') as any)?.length !== 0)
+        //     dispatch({ type: ProductActionTypes.CHANGE_PRODUCTS, payload: JSON.parse(localStorage.getItem('products') as any) })
     }, [])
+
+    useEffect(() => {
+        console.log(products)
+    }, [products])
 
     return (
         <div className={cl.wrapper}>
@@ -59,7 +65,7 @@ const MainMain: FC = () => {
                     </span>
                 </div>
             }
-            <Link to={'admin'}>
+            <Link to={'/admin'}>
                 <div className={cl.adminBtn}>
                     <Button>
                         Админ панель

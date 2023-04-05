@@ -8,6 +8,14 @@ import Button from '../../../UI/Button/Button';
 import Input from '../../../UI/Input/Input';
 import './bottomHeader.css'
 
+import mainLogo from '../../../icons/main-logo.png'
+import catalogIcon from '../../../icons/catalog-btn-icon.png'
+import operatorImg from '../../../imgs/bottom-header-img.png'
+import downloadIcon from '../../../icons/download-icon.png'
+import basketIcon from '../../../icons/basket-icon.png'
+import blackCatalogIcon from '../../../icons/phone-catalog-icon.png'
+import searchIcon from '../../../icons/phone-search-icon.png'
+
 const BottomHeader = () => {
     const navigate = useNavigate()
 
@@ -28,13 +36,13 @@ const BottomHeader = () => {
     return (
         <div className='bottom-header container'>
             <div className="bottom-header-logo">
-                <img src="/icons/main-logo.png" alt="" />
+                <img src={mainLogo} alt="" />
             </div>
             <div className="bottom-header-functional">
                 <Link to={'/'}>
                     <Button className='bottom-header-btn'>
                         Каталог
-                        <img src="/icons/catalog-btn-icon.png" alt="" />
+                        <img src={catalogIcon} alt="" />
                     </Button>
                 </Link>
             </div>
@@ -47,16 +55,16 @@ const BottomHeader = () => {
                     <p>время работы: 9:00-20:00</p>
                     <a href="#">Заказать звонок</a>
                 </div>
-                <img src="/imgs/bottom-header-img.png" alt="" />
+                <img src={operatorImg} alt="" />
             </div>
             <div className="price-list">
                 <Button>
                     Прайс-лист
-                    <img src="/icons/download-icon.png" alt="" />
+                    <img src={downloadIcon} alt="" />
                 </Button>
             </div>
             <div className="bottom-header-basket-cont">
-                <img src="/icons/basket-icon.png" alt="" />
+                <img src={basketIcon} alt="" />
                 <div className='basket_count'>{basket.length}</div>
                 <Link to={'basket'}>
                     <div className="bottom-header-basket-info">
@@ -67,11 +75,11 @@ const BottomHeader = () => {
             </div>
 
             <div className="phone-bottom-catalog-btn">
-                <img src="/icons/phone-catalog-icon.png" alt="" />
+                <img src={blackCatalogIcon} alt="" />
                 Каталог
             </div>
             <div className="phone-bottom-search-btn">
-                <img src="/icons/phone-search-icon.png" alt="" />
+                <img src={searchIcon} alt="" />
                 Поиск
             </div>
         </div>

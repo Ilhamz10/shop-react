@@ -7,6 +7,12 @@ import { useTypeSelector } from '../../../hooks/useTypeSelector';
 import { IProduct } from '../../../types/product';
 import { BasketActionType } from '../../../types/basket';
 
+import basketIcon from '../../../icons/basket-icon.png'
+import mainLogo from '../../../icons/main-logo.png'
+import catalogIcon from '../../../icons/catalog-btn-icon.png'
+import locationIcon from '../../../icons/location_icon.png'
+import mailIcon from '../../../icons/mail_icon.png'
+
 const TopHeader = () => {
     const { basket } = useTypeSelector(state => state.basket);
 
@@ -14,14 +20,14 @@ const TopHeader = () => {
         <div className="top-header container">
             <div className="top-header-info">
                 <div className="location">
-                    <img src="/icons/location_icon.png" alt="no img" />
+                    <img src={locationIcon} alt="no img" />
                     <div className="location-text">
                         <h4>г. Кокчетав, ул. Ж. Ташенова 129Б</h4>
                         <p>(Рынок Восточный)</p>
                     </div>
                 </div>
                 <div className="mail">
-                    <img src="/icons/mail_icon.png" alt="no img" />
+                    <img src={mailIcon} alt="no img" />
                     <div className="mail-text">
                         <h4>opt.sultan@mail.ru</h4>
                         <p>На связи в любое время</p>
@@ -30,15 +36,15 @@ const TopHeader = () => {
             </div>
             <div className="menu-btn">
                 <Button>
-                    <img src="/icons/catalog-btn-icon.png" alt="" />
+                    <img src={catalogIcon} alt="" />
                 </Button>
             </div>
             <div className="top-header-logo">
-                <img src="/icons/main-logo.png" alt="" />
+                <img src={mainLogo} alt="" />
             </div>
             <div className="top-header-basket-cont">
                 <Link to={'basket'}>
-                    <img src="/icons/basket-icon.png" alt="" />
+                    <img src={basketIcon} alt="" />
                     <div className='basket_count'>{basket.length}</div>
                 </Link>
             </div>

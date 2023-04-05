@@ -2,6 +2,7 @@ import React, {FC} from 'react';
 import cl from './ChangeBtn.module.css'
 import Button from '../../../UI/Button/Button';
 import { IProduct } from '../../../types/product';
+import deleteBtn from '../../../icons/delete-icon.png'
 
 interface IProps{
     product: IProduct;
@@ -19,10 +20,10 @@ const ChangeBtn: FC<IProps> = ({product, setProducts}) => {
 
     return (
         <div className={cl.changeBtn}>
-            <img className={cl.productImg} src={product.url} alt="" />
+            <img className={cl.productImg} src={process.env.PUBLIC_URL + product.url} alt="" />
             <p>{product.name} {product.description} <span>{product.size} {product.sizeType}</span></p>
             <Button onClick={() => deleteProduct(product)}>
-                <img src="/icons/delete-icon.png" alt="" />
+                <img src={deleteBtn} alt="" />
             </Button>
         </div>
     );

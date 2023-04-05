@@ -10,6 +10,8 @@ import cl from './MainAside.module.css'
 import SlideBtn from '../../../UI/SlideBtn/SlideBtn';
 import SortBtn from '../../../UI/SortBtn/SortBtn';
 
+import deleteIcon from '../../../icons/delete-icon.png'
+
 let filteredManufacturers: string[] = []
 let filteredBrands: string[] = []
 
@@ -37,8 +39,8 @@ const MainAside = () => {
     const [brandsLimit, setBrandsLimit] = useState(2)
     const [manufacturersLimit, setManufacturersLimit] = useState(2)
 
-    const { filteredProducts } = useTypeSelector(state => state.product)
-    let products = JSON.parse(localStorage.getItem('products') as any) || []
+    const { products, filteredProducts } = useTypeSelector(state => state.product)
+    let products_local = JSON.parse(localStorage.getItem('products') as any) || []
     const dispatch = useDispatch()
 
     const manufacturers: string[] = []
@@ -60,8 +62,11 @@ const MainAside = () => {
     useEffect(() => {
         filteredManufacturers = []
         filteredBrands = []
-        setFilters()
     }, [])
+
+    useEffect(() => {
+        setFilters()
+    }, [products])
 
     function brandFilter(brand: string) {
         if (!filteredBrands.includes(brand))
@@ -173,7 +178,7 @@ const MainAside = () => {
                         Показать
                     </Button>
                     <Button onClick={clearFilters}>
-                        <img src="/icons/delete-icon.png" alt="" />
+                        <img src={deleteIcon} alt="" />
                     </Button>
                 </div>
             </div>
