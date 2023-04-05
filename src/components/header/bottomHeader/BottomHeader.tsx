@@ -25,13 +25,15 @@ const BottomHeader = () => {
     const [count, setCount] = useState(0)
     useEffect(() => {
         let price = 0
-        if (basket.length != 0) {
+        if (basket.length !== 0) {
             price = basket.reduce((sum: number, item: IProduct) => {
                 return sum += item.price * item.productCount
             }, 0)
             setCount(basket.reduce((sum: number, item: IProduct) => {
                 return sum += item.productCount
             }, 0))
+        } else {
+            setCount(0)
         }
         dispatch({ type: BasketActionType.SET_PRICE, payload: price.toFixed(2) })
     }, [basket, currentProduct.productCount])
