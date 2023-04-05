@@ -1,0 +1,44 @@
+.sortBtnCont {
+    display: flex;
+}
+
+.sortBtnCont h4{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.dropDown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropBtn {
+    background: none;
+    padding: 0 5px;
+    color: rgba(63, 78, 101, 1);
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropDownContent {
+    display: block;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropDownContent div {
+    font-size: 14px;
+    color: black;
+    padding: 12px 16px;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+}
+
+.dropDownContent div:hover {
+    background-color: #ddd;
+}

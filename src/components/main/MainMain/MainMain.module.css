@@ -1,0 +1,87 @@
+.wrapper {
+    grid-column: 2/4;
+}
+
+.productsCont {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 21px;
+}
+
+.warning span {
+    font-weight: 800;
+}
+
+.warning {
+    font-size: 18px;
+    margin: 0 auto;
+    grid-column: 1/4;
+}
+
+
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 3%;
+    width: 100%;
+    margin: 20px 0 0;
+}
+
+.pagination div {
+    display: flex;
+}
+
+.pagBtn {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.active {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(255, 239, 209);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.pagLeftRight {
+    font-size: 1.5rem;
+    color: orange;
+    cursor: pointer;
+}
+
+
+.adminBtn{
+    position: fixed;
+    bottom: 5%;
+    left: 90%;
+    height: 50px;
+    display: flex;
+}
+
+@media (max-width: 700px) {
+    .wrapper{
+        grid-column: 1/4;
+    }
+}
+
+@media (max-width: 1000px) {
+    .productsCont{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .productsCont{
+        grid-template-columns: 1fr;
+        justify-content: center;
+    }
+}

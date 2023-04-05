@@ -1,0 +1,162 @@
+.bottom-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.bottom-header-logo{
+    width: 12%;
+    min-width: 160px;
+}
+
+.bottom-header-functional{
+    display: grid;
+    height: 60px;
+    gap: 15px;
+}
+
+.bottom-header-functional a{
+    display: grid;
+    text-decoration: none;
+}
+
+.bottom-header-info{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    text-align-last: right;
+    gap: 15px;
+}
+
+.bottom-header-info img{
+    width: 20%;
+}
+
+.bottom-header-info-text{
+    width: 60%;
+}
+
+.bottom-header-info-text h4{
+    font-size: 14px;
+}
+
+.bottom-header-info-text p{
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.bottom-header-info-text a{
+    font-size: 10px;
+    font-weight: 400;
+}
+
+.bottom-header-basket-cont{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    position: relative;
+    width: 10%;
+}
+
+.bottom-header-basket-cont img{
+    cursor: pointer;
+}
+
+.bottom-header-basket-info p{
+    font-weight: 300;
+    font-size: 12px;
+}
+
+.bottom-header-basket-info h4{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.price-list{
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 59px;
+    width: 15%;
+}
+
+.basket_count{
+    border: 3px solid white;
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    background: orange;
+    color: white;
+    position: absolute;
+    top: 5px;
+    left: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+}
+
+
+.phone-bottom-catalog-btn,
+.phone-bottom-search-btn{
+    display: none;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+@media (max-width: 1300px) {
+    .bottom-header-info img{
+        display: none;
+    }
+
+    .bottom-header-info-text{
+        width: 100%;
+    }
+}
+
+@media (max-width: 1124px) {
+    .bottom-header-info{
+        display: none;
+    }
+
+    .bottom-header-functional a{
+        width: 40%;
+    }
+
+    .bottom-header-functional div{
+        width: 100%;
+    }
+}
+
+@media (max-width: 950px) {
+    .price-list{
+        display: none;
+    }
+}
+
+@media (max-width: 800px) {
+    .bottom-header-basket-cont{
+        display: none;
+    }
+    .bottom-header-logo{
+        display: none;
+    }
+    .bottom-header-functional{
+        display: none;
+    }
+    .bottom-header-input{
+        display: none;
+    }
+
+    .bottom-header{
+        justify-content: space-around;
+    }
+
+    .phone-bottom-catalog-btn,
+    .phone-bottom-search-btn{
+        display: flex;
+    }
+}

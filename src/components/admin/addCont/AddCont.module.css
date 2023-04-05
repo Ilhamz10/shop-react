@@ -1,0 +1,47 @@
+.changeCont{
+    padding: 20px;
+    box-shadow: 0 0 10px -5px inset;
+    border-radius: 10px;
+}
+
+.productInfo{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.productInfo input{
+    width: 100%;
+    resize: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 10px;
+    border-color: gray;
+}
+
+.typeOfCareCont{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.typeOfCare input{
+    width: auto;
+}
+
+textarea{
+    resize: none;
+    height: 150px;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.left,
+.right{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

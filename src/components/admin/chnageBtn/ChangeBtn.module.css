@@ -1,0 +1,14 @@
+.changeBtn{
+    display: grid;
+    grid-template-columns: 1fr 18fr 1fr;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 0 10px -5px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.changeBtn .productImg{
+    width: 50%;
+}

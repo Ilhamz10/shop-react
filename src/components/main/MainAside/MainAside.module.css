@@ -1,0 +1,164 @@
+.wrapper{
+    min-width: 220px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.priceFilterCont{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.priceFilterCont h3{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.priceFilterCont p{
+    font-size: 14px;
+    color: rgb(63, 78, 101);
+}
+
+.priceFilterCont p span{
+    font-weight: 500;
+}
+
+.priceFilter{
+    display: flex;
+    gap: 5px;
+}
+
+.priceFilter input{
+    border: none;
+    border-radius: 100px;
+    padding: 4px 0;
+    text-align: center;
+    background: rgba(255, 198, 80, 0.3);
+    width: 45%;
+}
+
+
+
+.manufactorFilterCont{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.manufactorFilterCont h3{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.checkbox{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.checkbox div{
+    display: flex;
+    gap: 10px;
+}
+
+.checkbox label{
+    font-size: 14px;
+    color: rgb(63, 78, 101);
+}
+
+.btnCont{
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.searchCont{
+    display: grid;
+    gap: 20px;
+}
+
+.sideFilters div{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sideFilters div div{
+    border-bottom: 1px dotted gray;
+    padding-bottom: 20px;
+}
+
+.sideFilters div div label{
+    box-shadow: none;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.sortBtnCont{
+    display: none;
+}
+
+.toggle{
+    width: 40px;
+    height: 40px;
+    background: #FFE4B2;
+    display: none;
+}
+
+@media (max-width: 700px) {
+    .wrapper{
+        grid-row: 2/3;
+        grid-column: 1/4;
+        flex-direction: row;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .sideFilters div{
+        gap: 0;
+    }
+    .sideFilters div div{
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .sortBtnCont{
+        display: block;
+        grid-column: 1/3;
+    }
+
+    .searchCont{
+        grid-row: 2/3;
+    }
+    .sideFilters{
+        grid-row: 2/3;
+    }
+}
+
+@media (max-width: 550px) {
+    .wrapper{
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    .searchCont{
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+    .sideFilters{
+        grid-column: 1/2;
+        grid-row: 3/4;
+    }
+    .search{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .toggle{
+        display: block;
+        border: none;
+        border-radius: 50%;
+    }
+}

@@ -1,0 +1,9 @@
+.collapse{
+    display: flex;
+}
+
+.toggle{
+    cursor: pointer;
+    font-weight: 500;
+}
+

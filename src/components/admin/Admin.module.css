@@ -1,0 +1,8 @@
+.cont{
+    display: grid;
+    gap: 30px;
+}
+
+.addProductCont button{
+    margin-bottom: 10px;
+}

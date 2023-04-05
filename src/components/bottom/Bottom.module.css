@@ -1,0 +1,102 @@
+.bottom{
+    background: #3F4E65;
+    color: white;
+    margin-top: 30px;
+}
+
+.cont{
+    display: grid;
+    grid-template-columns: 3.2fr 1.29fr 1.7fr 2.14fr 1.52fr;
+    gap: 5%;
+    padding: 70px 0;
+}
+
+.cont ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cont ul li, .cont p{
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.cont h2{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.cont span, .cont label{
+    font-size: 12px;
+}
+
+.cont a{
+    color: white;
+    font-size: 12px;
+    display: block;
+}
+
+
+.btnCont{
+    height: 50px;
+    display: flex;
+}
+
+.priceListCont{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.icons{
+    display: flex;
+    gap: 5px;
+}
+
+.cont h3{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.contacts{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.first{
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+}
+
+
+.logo img{
+    margin-bottom: 15px;
+}
+
+.input label{
+    display: block;
+    margin-bottom: 15px;
+}
+
+
+@media (max-width: 1050px) {
+    .cont{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    .cont{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+    .first{
+        grid-column: 1/3;
+    }
+}
