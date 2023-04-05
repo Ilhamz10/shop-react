@@ -8,6 +8,8 @@ import { useDispatch } from 'react-redux';
 import { BasketActionType } from '../../types/basket';
 import Modal from '../Modal/Modal';
 
+import doubleCheckIcon from '../../icons/icon-double-check.png'
+
 const Basket = () => {
     const [modalActive, setModalActive] = useState(false)
 
@@ -42,7 +44,7 @@ const Basket = () => {
             </div>
             <Modal active={modalActive} setActive={setModalActive}>
                 <div className={cl.modalDoubleCheck}>
-                    <img src="/icons/icon-double-check.png" alt="" />
+                    <img src={doubleCheckIcon} alt="" />
                 </div>
                 <h1 className={cl.modalTitle}>Спасибо за заказ</h1>
                 <p className={cl.modalText}>Наш менеджер свяжется с вами в ближайшее время</p>
