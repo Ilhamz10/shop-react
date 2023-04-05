@@ -45,7 +45,7 @@ const BasketProduct: FC<IProps> = ({ product }) => {
     return (
         <div className={cl.basketProduct}>
             <div className={cl.img}>
-                <img src={process.env.PUBLIC_URL + product.url} alt="" />
+                <img src={product.url === undefined ? '' : product.url.includes('https://') ? product.url : process.env.PUBLIC_URL + product.url} alt="" />
             </div>
             <div className={cl.info}>
                 <p className={cl.size}>{product.size} {product.sizeType}</p>

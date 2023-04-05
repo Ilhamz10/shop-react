@@ -14,6 +14,7 @@ const Basket = () => {
     const [modalActive, setModalActive] = useState(false)
 
     const { basket, allPrice } = useTypeSelector(state => state.basket)
+    
     const dispatch = useDispatch()
 
     function checkout() {

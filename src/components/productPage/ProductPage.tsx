@@ -35,12 +35,12 @@ const ProductPage = () => {
             dispatch({ type: BasketActionType.ADD_TO_BASKET, payload: currentProduct })
         }
     }
-
+    
     return (
         <div className='container'>
             <main className={cl.main}>
                 <div className={cl.productImg}>
-                    <img src={process.env.PUBLIC_URL + currentProduct.url} alt="" />
+                    <img src={currentProduct.url === undefined ? '' : currentProduct.url.includes('https://') ? currentProduct.url : process.env.PUBLIC_URL + currentProduct.url} alt="" />
                 </div>
                 <div className={cl.info}>
                     <p className={cl.inStock}>В наличии</p>

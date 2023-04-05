@@ -17,18 +17,21 @@ import blackCatalogIcon from '../../../icons/phone-catalog-icon.png'
 import searchIcon from '../../../icons/phone-search-icon.png'
 
 const BottomHeader = () => {
-    const navigate = useNavigate()
 
     const { currentProduct } = useTypeSelector(state => state.product)
     const { basket, allPrice } = useTypeSelector(state => state.basket);
     const dispatch = useDispatch()
 
+    const [count, setCount] = useState(0)
     useEffect(() => {
         let price = 0
         if (basket.length != 0) {
             price = basket.reduce((sum: number, item: IProduct) => {
                 return sum += item.price * item.productCount
             }, 0)
+            setCount(basket.reduce((sum: number, item: IProduct) => {
+                return sum += item.productCount
+            }, 0))
         }
         dispatch({ type: BasketActionType.SET_PRICE, payload: price.toFixed(2) })
     }, [basket, currentProduct.productCount])
@@ -64,9 +67,10 @@ const BottomHeader = () => {
                 </Button>
             </div>
             <div className="bottom-header-basket-cont">
-                <img src={basketIcon} alt="" />
-                <div className='basket_count'>{basket.length}</div>
                 <Link to={'basket'}>
+                    <img src={basketIcon} alt="" />
+                    <div className='basket_count'>{count}</div>
+
                     <div className="bottom-header-basket-info">
                         <p>Корзина</p>
                         <h4>{allPrice} $</h4>

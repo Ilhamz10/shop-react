@@ -28,7 +28,7 @@ const Product: FC<IProps> = ({ product }) => {
 
     return (
         <div className={cl.product}>
-            <img className={cl.productImg} src={process.env.PUBLIC_URL + product.url} alt="" />
+            <img className={cl.productImg} src={product.url === undefined ? '' : product.url?.includes('https://') ? product.url : process.env.PUBLIC_URL + product.url} alt="" />
             <div className={cl.info}>
                 <p className={cl.size}>{product.size} {product.sizeType}</p>
                 <Link className={cl.link} to={'product'}>
