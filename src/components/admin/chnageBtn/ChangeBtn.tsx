@@ -1,21 +1,27 @@
-import React, {FC} from 'react';
+import React, { FC } from 'react';
 import cl from './ChangeBtn.module.css'
 import Button from '../../../UI/Button/Button';
-import { IProduct } from '../../../types/product';
+import { IProduct, ProductActionTypes } from '../../../types/product';
 import deleteBtn from '../../../icons/delete-icon.png'
+import { useTypeSelector } from '../../../hooks/useTypeSelector';
+import { useDispatch } from 'react-redux';
 
-interface IProps{
+interface IProps {
     product: IProduct;
-    setProducts: any;
+    setProducts?: any;
 }
 
-const ChangeBtn: FC<IProps> = ({product, setProducts}) => {
-    let products = JSON.parse(localStorage.getItem('products') as string)
+const ChangeBtn: FC<IProps> = ({ product }) => {
+    const { products } = useTypeSelector(state => state.product)
+    let products_local = JSON.parse(localStorage.getItem('products') as string) || products
 
-    function deleteProduct(product: IProduct){
-        products = products.filter((prod: IProduct) => prod.id !== product.id)
-        localStorage.setItem('products', JSON.stringify(products))
-        setProducts(products)
+    const dispatch = useDispatch()
+
+
+    function deleteProduct(product: IProduct) {
+        products_local = products_local.filter((prod: IProduct) => prod.id !== product.id)
+        localStorage.setItem('products', JSON.stringify(products_local))
+        dispatch({type: ProductActionTypes.CHANGE_PRODUCTS, payload: products_local})
     }
 
     return (

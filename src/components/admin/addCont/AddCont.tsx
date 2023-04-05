@@ -3,14 +3,18 @@ import SlideBtn from '../../../UI/SlideBtn/SlideBtn';
 import { filterTypes } from '../../ProductFilter/ProductFilter';
 import cl from './AddCont.module.css'
 import Button from '../../../UI/Button/Button';
+import { useTypeSelector } from '../../../hooks/useTypeSelector';
+import { ProductActionTypes } from '../../../types/product';
+import { useDispatch } from 'react-redux';
 
 interface IProps {
     setProducts?: any
 }
 
-const AddCont: FC<IProps> = ({ setProducts }) => {
+const AddCont: FC<IProps> = () => {
 
-    let products = JSON.parse(localStorage.getItem('products') as any)
+    const { products } = useTypeSelector(state => state.product)
+    const dispatch = useDispatch()
 
     let checkedTypesOfCare: string[] = []
 
@@ -47,11 +51,11 @@ const AddCont: FC<IProps> = ({ setProducts }) => {
             productCount: 1
         }
 
-        if(Object.values(newProduct).some(item => item == '')) return
+        if (Object.values(newProduct).some(item => item == '')) return
 
 
         localStorage.setItem('products', JSON.stringify([...products, newProduct]))
-        setProducts(JSON.parse(localStorage.getItem('products') as any))
+        dispatch({type: ProductActionTypes.CHANGE_PRODUCTS, payload: [...products, newProduct]})
 
         urlInput.current.value = ''
         barcodeInput.current.value = 0

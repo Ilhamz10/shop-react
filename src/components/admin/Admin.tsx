@@ -10,11 +10,7 @@ import ChangeCont from './changeCont/ChangeCont';
 import AddCont from './addCont/AddCont';
 
 const Admin = () => {
-    const [products, setProducts] = useState([])
-
-    useEffect(() => {
-        setProducts(JSON.parse(localStorage.getItem('products') as any))
-    }, [])
+    const { products } = useTypeSelector(state => state.product)
 
     return (
         <div className='container'>
@@ -27,11 +23,11 @@ const Admin = () => {
                         direction={'column'}
                         trDisplay={'none'}
                     >
-                        <AddCont setProducts={setProducts}/>
+                        <AddCont />
                     </SlideBtn>
                 </div>
                 {products.map((product: IProduct) =>
-                    <SlideBtn key={product.id} trDisplay={'none'} direction={'column'} label={<ChangeBtn product={product} setProducts={setProducts} />}>
+                    <SlideBtn key={product.id} trDisplay={'none'} direction={'column'} label={<ChangeBtn product={product} />}>
                         <ChangeCont key={product.id} product={product} />
                     </SlideBtn>
                 )}
