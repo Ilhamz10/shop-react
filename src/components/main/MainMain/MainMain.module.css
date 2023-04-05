@@ -64,13 +64,8 @@
     bottom: 5%;
     left: 90%;
     height: 50px;
+    right: 10px;
     display: flex;
-}
-
-@media (max-width: 700px) {
-    .wrapper{
-        grid-column: 1/4;
-    }
 }
 
 @media (max-width: 1000px) {
@@ -79,9 +74,27 @@
     }
 }
 
+@media (max-width: 700px) {
+    .wrapper{
+        grid-column: 1/4;
+    }
+    .adminBtn{
+        left: 80%;
+        bottom: 5%;
+    }
+}
+
 @media (max-width: 600px) {
     .productsCont{
         grid-template-columns: 1fr;
         justify-content: center;
+    }
+}
+
+
+@media (max-width: 500px) {
+    .adminBtn{
+        left: 70%;
+        bottom: 5%;
     }
 }

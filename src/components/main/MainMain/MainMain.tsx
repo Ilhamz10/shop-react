@@ -28,9 +28,6 @@ const MainMain: FC = () => {
 
     useEffect(() => {
         dispatch(fetchProducts() as any)
-        
-        // if(JSON.parse(localStorage.getItem('products') as any)?.length !== 0)
-        //     dispatch({ type: ProductActionTypes.CHANGE_PRODUCTS, payload: JSON.parse(localStorage.getItem('products') as any) })
     }, [])
 
     useEffect(() => {
