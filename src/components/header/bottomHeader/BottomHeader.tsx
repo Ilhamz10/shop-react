@@ -69,7 +69,7 @@ const BottomHeader = () => {
                 </Button>
             </div>
             <div className="bottom-header-basket-cont">
-                <Link to={'basket'}>
+                <Link data-testid='basket-link' to={'basket'}>
                     <img src={basketIcon} alt="" />
                     <div className='basket_count'>{count}</div>
 

@@ -36,7 +36,7 @@ const ProductFilter:FC<IProps> = ({id}) => {
         }
         else filters.splice(filters.indexOf(filterType), 1)
 
-        dispatch({ type: ProductActionTypes.PRODUCTS_FILTER, payload: (searchedProducts.length !== 0 && !searchedProducts.includes('Извините') ? searchedProducts : products).filter(product => product.typeOfCare.some((care: string) => filters.includes(care))) })
+        dispatch({ type: ProductActionTypes.PRODUCTS_FILTER, payload: filters })
     }
 
 

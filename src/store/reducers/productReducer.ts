@@ -24,7 +24,7 @@ export const productReducer = (state = initialState, action: IProductAction): IP
                 return { ...state, products: action.payload }
             return { ...state, filteredProducts: action.payload }
         case ProductActionTypes.PRODUCTS_FILTER:
-            return { ...state, filteredProducts: action.payload }
+            return { ...state, filteredProducts: (state.searchedProducts.length !== 0 && !state.searchedProducts.includes('Извините') ? state.searchedProducts : state.products).filter(product => product.typeOfCare.some((care: string) => action.payload.includes(care))) }
         case ProductActionTypes.PRODUCTS_SEARCH:
             return { ...state, searchedProducts: action.payload }
         case ProductActionTypes.SET_CURRENT_PRODUCT:

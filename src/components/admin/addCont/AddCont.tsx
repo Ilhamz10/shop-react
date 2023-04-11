@@ -162,7 +162,7 @@ const AddCont: FC<IProps> = () => {
                     </SlideBtn>
                 </div>
             </div>
-            <Button onClick={() => addProduct()}>
+            <Button data-testid='admin-page-add-btn' onClick={() => addProduct()}>
                 Add new product
             </Button>
         </div>

@@ -37,7 +37,7 @@ const ProductPage = () => {
     }
     
     return (
-        <div className='container'>
+        <div data-testid='product-page' className='container'>
             <main className={cl.main}>
                 <div className={cl.productImg}>
                     <img src={currentProduct.url === undefined ? '' : currentProduct.url.includes('https://') ? currentProduct.url : process.env.PUBLIC_URL + currentProduct.url} alt="" />

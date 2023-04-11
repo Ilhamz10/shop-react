@@ -17,12 +17,15 @@ interface ISetPriceAction{
 
 interface IDeleteProduct{
     type: BasketActionType.DELETE_FROM_BASKET;
-    payload: IProduct[];
+    payload: number;
 }
 
 interface IChangeProductCount{
     type: BasketActionType.CHANGE_PRODUCT_COUNT;
-    payload: IProduct[];
+    payload: {
+        id: number;
+        change: number;
+    };
 }
 
 export enum BasketActionType {

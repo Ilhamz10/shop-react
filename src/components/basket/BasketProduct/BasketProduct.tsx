@@ -18,27 +18,21 @@ const BasketProduct: FC<IProps> = ({ product }) => {
 
     function increment(product: IProduct) {
         dispatch({
-            type: BasketActionType.CHANGE_PRODUCT_COUNT, payload: basket.map(prod => {
-                if (prod.id === product.id)
-                    prod.productCount += 1
-                return prod
-            })
+            type: BasketActionType.CHANGE_PRODUCT_COUNT, 
+            payload: {id: product.id, change: 1}
         })
     }
 
     function decrement() {
         dispatch({
-            type: BasketActionType.CHANGE_PRODUCT_COUNT, payload: basket.map(prod => {
-                if (prod.id === product.id && prod.productCount !== 1)
-                    prod.productCount -= 1
-                return prod
-            })
+            type: BasketActionType.CHANGE_PRODUCT_COUNT, 
+            payload: {id: product.id, change: -1}
         })
     }
 
     function deleteProduct(product: any) {
         let arr = basket.filter((prod) => prod.id !== product.id)
-        dispatch({ type: BasketActionType.DELETE_FROM_BASKET, payload: arr })
+        dispatch({ type: BasketActionType.DELETE_FROM_BASKET, payload: product.id })
     }
 
 

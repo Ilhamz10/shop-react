@@ -25,7 +25,7 @@ const Basket = () => {
     }
 
     return (
-        <div className='container'>
+        <div data-testid='basket-page' className='container'>
             <h1>Корзина</h1>
             <div className={cl.main}>
                 {basket.length === 0

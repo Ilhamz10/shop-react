@@ -27,11 +27,11 @@ const Product: FC<IProps> = ({ product }) => {
     }
 
     return (
-        <div className={cl.product}>
+        <div data-testid='product' className={cl.product}>
             <img className={cl.productImg} src={product.url === undefined ? '' : product.url?.includes('https://') ? product.url : process.env.PUBLIC_URL + product.url} alt="" />
             <div className={cl.info}>
                 <p className={cl.size}>{product.size} {product.sizeType}</p>
-                <Link className={cl.link} to={'product'}>
+                <Link data-testid='product-link' className={cl.link} to={'product'}>
                     <p onClick={() => dispatch({ type: ProductActionTypes.SET_CURRENT_PRODUCT, payload: product })} className={cl.description}><span>{product.name} </span>{product.description}</p>
                 </Link>
                 <div className={cl.miniInfo}>

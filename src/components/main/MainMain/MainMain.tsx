@@ -62,7 +62,7 @@ const MainMain: FC = () => {
                     </span>
                 </div>
             }
-            <Link to={'/admin'}>
+            <Link data-testid='admin-link' to={'/admin'}>
                 <div className={cl.adminBtn}>
                     <Button>
                         Админ панель

@@ -20,11 +20,11 @@ const Admin = () => {
     }, [])
 
     return (
-        <div className='container'>
+        <div data-testid='admin-page' className='container'>
             <div className={cl.cont}>
                 <div className={cl.addProductCont}>
                     <SlideBtn
-                        label={<Button>
+                        label={<Button data-testid='add-product'>
                             Добавить новый продукт
                         </Button>}
                         direction={'column'}
